@@ -9,7 +9,9 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 
-
+// Memanggil Routes
+var routes = require('./routes');
+routes(app)
 
 
 
