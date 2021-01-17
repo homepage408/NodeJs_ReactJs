@@ -30,3 +30,19 @@ exports.tampilberdasarid = function (req, res) {
             }
         });
 }
+
+// Menambahkan data mahasiswa
+exports.tambahmahasiswa = function (req, res) {
+    var nim = req.body.nim;
+    var nama = req.body.nama;
+    var jurusan = req.body.jurusan;
+
+    connection.query('INSERT INTO mahasiswa (nim,nama,jurusan) values (?,?,?)', [nim, nama, jurusan],
+        function (err, rows, fields) {
+            if (err) {
+                console.log(err)
+            } else {
+                response.ok('Berhasil Menambahkan data', res)
+            }
+        });
+}
