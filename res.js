@@ -13,7 +13,7 @@ exports.ok = function (values, res) {
 exports.okNested = function (values, res) {
     // Lakukan akumulasi
     const hasil = values.reduce((akumulasikan, item) => {
-        // Tentukan key Group nya
+        // Tentukan key Group nya... nama == nama mahasiswa
         if (akumulasikan[item.nama]) {
             // Buat variable group nama mahasiswa
             const group = akumulasikan[item.nama];
@@ -21,6 +21,8 @@ exports.okNested = function (values, res) {
             if (Array.isArray(group.matakuliah)) {
                 // tambahkan valuesnya ke dalam group matakuliah
                 group.matakuliah.push(item.matakuliah)
+                // Menjumlahkan SKS
+                group.sks = group.sks + group.sks
             } else {
                 group.matakuliah = [group.matakuliah, item.matakuliah];
             }
