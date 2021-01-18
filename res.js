@@ -19,12 +19,15 @@ exports.okNested = function (values, res) {
             const group = akumulasikan[item.nama];
             // cek jika isi array adalah matakuliah
             if (Array.isArray(group.matakuliah)) {
+                // Menjumlahkan SKS
+                // group.sks.push(item.sks)
                 // tambahkan valuesnya ke dalam group matakuliah
                 group.matakuliah.push(item.matakuliah)
-                // Menjumlahkan SKS
-                group.sks = group.sks + group.sks
+
             } else {
                 group.matakuliah = [group.matakuliah, item.matakuliah];
+                // group.sks = sum([group.sks, item.sks]);
+
             }
         } else {
             akumulasikan[item.nama] = item;
