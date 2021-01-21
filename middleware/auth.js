@@ -65,7 +65,7 @@ exports.login = function (req, res) {
                     expiresIn: 1440
                 });
                 id_user = rows[0].id;
-
+                // Menambahkan role
                 var data = {
                     id_user: id_user,
                     access_token: token,
@@ -102,5 +102,5 @@ exports.login = function (req, res) {
 
 
 exports.halamanrahasia = function (req, res) {
-    response.ok('Halaman ini hanya untuk user dengan role = 2 !')
+    response.ok('Halaman ini hanya untuk user dengan role = 2 !', res)
 }
