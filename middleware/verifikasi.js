@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const config = require('../secret');
+const config = require('../config/secret');
 
 function verifikasi(roles) {
     return function (req, res, next) {
